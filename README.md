@@ -3,8 +3,13 @@
     <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="600" alt="anime coding gif">
 </p>p>
 
-<h1 align="center">👋 Hey there, I'm <span style="color:#4FC3F7">John Paulo Mendez</span>span></h1>h1>
-<h3 align="center">🚀 Currently studying | Focused on Mastering Python 🐍</h3>h3>
+<p align="center">
+  <img src="https://svg-banners.vercel.app/api?type=typeWriter&text1=👋%20Hey%20there,%20I'm%20John%20Paulo%20Mendez&width=800&height=100" alt="John Paulo Mendez Banner" />
+</p>p>
+
+<p align="center">
+  🚀 Currently studying | Focused on Mastering Python 🐍
+</p>p>
 
 <hr style="border:1px solid #4FC3F7;"/>
 
