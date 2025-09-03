@@ -1,17 +1,17 @@
 <!-- Minimal anime GIF banner (centered, smaller) -->
 <p align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="500" alt="anime coding gif">
-</p>p>
+</p>
 
 <!-- Name banner (centered, smaller SVG) -->
 <div align="center">
   <img src="https://svg-banners.vercel.app/api?type=typeWriter&text1=Hey%20there%2C%20I%27m%20John%20Paulo%20Mendez&width=700&height=60" alt="John Paulo Mendez Banner" />
-</div>div>
+</div>
 
 <!-- Short status message (centered) -->
 <div align="center">
   Currently studying | Focused on Mastering Python
-</div>div>
+</div>
 
 <hr style="border:1px solid #4FC3F7;"/>
 
@@ -26,37 +26,37 @@
 <hr style="border:1px solid #4FC3F7;"/>
 
 ## About Me
-- I am currently mastering Python
-- - My goal is to build projects, share them here, and grow step by step
-  - - Interested in backend development and problem-solving
-   
-    - <hr style="border:1px solid #4FC3F7;"/>
+- I am currently mastering Python  
+- My goal is to build projects, share them here, and grow step by step  
+- Interested in backend development and problem-solving
 
-    ## Tech Stack
+<hr style="border:1px solid #4FC3F7;"/>
 
-    **Languages & tools (icons only):**
-    <span>
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="40" alt="C"/>
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="40" alt="C++"/>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="40" alt="C#"/>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" alt="Java"/>
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" alt="Python"/>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" alt="HTML5"/>
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" alt="CSS3"/>
-                  </span>
+## Tech Stack
 
-                  <hr style="border:1px solid #4FC3F7;"/>
+**Languages & tools (icons only):**  
+<span>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="40" alt="C"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="40" alt="C++"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="40" alt="C#"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" alt="Java"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" alt="Python"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" alt="HTML5"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" alt="CSS3"/>
+</span>
 
-    ## Latest Projects
-    <!--START_SECTION:activity-->
-    <!--END_SECTION:activity-->
+<hr style="border:1px solid #4FC3F7;"/>
 
-    <hr style="border:1px solid #4FC3F7;"/>
+## Latest Projects
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
 
-    ## Reach Me
-    - Email: paulomendez0927@gmail.com
-    - - LinkedIn: [John Paulo Mendez](https://www.linkedin.com/in/john-paulo-mendez-213095381?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
-     
-      - <hr style="border:1px solid #4FC3F7;"/>
+<hr style="border:1px solid #4FC3F7;"/>
 
-      Thanks for visiting my profile — feel free to connect or check out my projects!
+## Reach Me
+- Email: paulomendez0927@gmail.com  
+- LinkedIn: [John Paulo Mendez](https://www.linkedin.com/in/john-paulo-mendez-213095381?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+
+<hr style="border:1px solid #4FC3F7;"/>
+
+Thanks for visiting my profile — feel free to connect or check out my projects!
