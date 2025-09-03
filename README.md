@@ -1,7 +1,4 @@
-<!-- Minimal anime GIF banner (centered, smaller) -->
-<p align="center">
-  <img src="https://tenor.com/view/serial-experiments-lain-lainpilled-dance-gif-23059784" width="500" alt="">
-</p>
+<div class="tenor-gif-embed" data-postid="23059784" data-share-method="host" data-aspect-ratio="0.61875" data-width="100%"><a href="https://tenor.com/view/serial-experiments-lain-lainpilled-dance-gif-23059784">Serial Experiments Sticker</a>a>from <a href="https://tenor.com/search/serial-stickers">Serial Stickers</a>a></div>div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 <!-- Name banner (centered, smaller SVG) -->
 <div align="center">
