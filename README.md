@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="https://i.pinimg.com/originals/1f/7a/77/1f7a77b1c9a2d2f0d7d99a86c8bb8a8c.gif" width="600" alt="welcome gif">
+  <!-- Minimal anime GIF banner -->
+    <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="600" alt="anime coding gif">
 </p>p>
 
 <h1 align="center">Hi 👋, I'm John Paulo Mendez</h1>h1>
@@ -22,9 +23,35 @@
    
     - ---
 
+    ### 🔧 Tech Stack
+
+    **Badges style**
+    <p align="center">
+      <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+        <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
+          <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+            <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+              <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
+                <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+                  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+    </p>p>
+
+    **Icon style**
+    <p align="center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="40"/>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="40"/>
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40"/>
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40"/>
+    </p>p>
+
+    ---
+
     ### 📫 Reach Me
-    - Email: your.email@example.com
-    - - LinkedIn: [linkedin.com/in/your-profile](#)
+    - 📧 Email: your.email@example.com
+    - - 💼 LinkedIn: [linkedin.com/in/your-profile](#)
      
       - ---
 
