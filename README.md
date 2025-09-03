@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://media.tenor.com/N_BuO9PHe2kAAAAC/serial-experiments-lain-lainpilled.gif" alt="Serial Experiments Lain" />
-</p>p>
+  <img src="https://github.com/user-attachments/assets/6a07094c-4838-4284-b28e-c81b8a0b05dc" alt="serial-experiments" />
+</p>
 
 
 <!-- Name banner (centered, smaller SVG) -->
@@ -10,7 +10,7 @@
 
 <!-- Short status message (centered) -->
 <div align="center">
-  I’m Currently studying | Focused on Mastering Python
+  Currently studying | Focused on Mastering Python
 </div>
 
 <hr style="border:1px solid #4FC3F7;"/>
