@@ -34,7 +34,7 @@
 
 ## Tech Stack
 
-**Languages & tools (icons only):**  
+**Languages & tools:**  
 <span>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="40" alt="C"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="40" alt="C++"/>
