@@ -1,6 +1,6 @@
 <!-- Minimal anime GIF banner (centered, smaller) -->
 <p align="center">
-  <img src="https://tenor.com/bIU4a.gif" width="500" alt="">
+  <img src="https://tenor.com/view/serial-experiments-lain-lainpilled-dance-gif-23059784" width="500" alt="">
 </p>
 
 <!-- Name banner (centered, smaller SVG) -->
