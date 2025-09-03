@@ -3,25 +3,25 @@
     <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="600" alt="anime coding gif">
 </p>p>
 
-<h1 align="center">Hi 👋, I'm John Paulo Mendez</h1>h1>
-<h3 align="center">🚀 Beginner Developer | Currently mastering Python 🐍</h3>h3>
+<h1 align="center">👋 Hey there, I'm <span style="color:#4FC3F7">John Paulo Mendez</span>span></h1>h1>
+<h3 align="center">🚀 Currently studying | Focused on Mastering Python 🐍</h3>h3>
 
----
+<hr style="border:1px solid #4FC3F7;"/>
 
 <p align="center">
-  <img height="50%" width="auto" src ="https://github-readme-stats.vercel.app/api?username=your-github-username&show_icons=true&count_private=true&theme=darcula&hide_border=true&hide=issues,contribs&bg_color=00000000">
-    <img height="50%" width="auto" src ="https://github-readme-stats.vercel.app/api/top-langs/?username=your-github-username&layout=compact&hide_border=true&theme=darcula&bg_color=00000000&langs_count=6&hide=jupyter%20notebook,tex,css,php">
-      <img src ="https://github-readme-streak-stats.herokuapp.com?user=your-github-username&theme=darcula&hide_border=true&background=FFFFFF00">
+  <img height="50%" width="auto" src ="https://github-readme-stats.vercel.app/api?username=jmmendez-ops&show_icons=true&count_private=true&theme=darcula&hide_border=true&hide=issues,contribs&bg_color=00000000">
+    <img height="50%" width="auto" src ="https://github-readme-stats.vercel.app/api/top-langs/?username=jmmendez-ops&layout=compact&hide_border=true&theme=darcula&bg_color=00000000&langs_count=6&hide=jupyter%20notebook,tex,css,php">
+      <img src ="https://github-readme-streak-stats.herokuapp.com?user=jmmendez-ops&theme=darcula&hide_border=true&background=FFFFFF00">
 </p>p>
 
----
+<hr style="border:1px solid #4FC3F7;"/>
 
 ### 🌱 About Me
 - 💻 I’m currently mastering **Python**
 - - 🎯 My goal is to build projects, share them here, and grow step by step
   - - 📚 Interested in backend development and problem-solving
    
-    - ---
+    - <hr style="border:1px solid #4FC3F7;"/>
 
     ### 🔧 Tech Stack
 
@@ -47,13 +47,19 @@
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40"/>
     </p>p>
 
-    ---
+    <hr style="border:1px solid #4FC3F7;"/>
+
+    ### 📂 Latest Projects
+    <!--START_SECTION:activity-->
+    <!--END_SECTION:activity-->
+
+    <hr style="border:1px solid #4FC3F7;"/>
 
     ### 📫 Reach Me
     - 📧 Email: your.email@example.com
     - - 💼 LinkedIn: [linkedin.com/in/your-profile](#)
      
-      - ---
+      - <hr style="border:1px solid #4FC3F7;"/>
 
       ⭐ *Thanks for visiting my profile — feel free to connect or check out my projects!*
       
