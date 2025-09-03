@@ -1,6 +1,6 @@
 <!-- Minimal anime GIF banner (centered, smaller) -->
 <p align="center">
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="500" alt="anime coding gif">
+  <img src="https://tenor.com/bIU4a.gif" width="500" alt="">
 </p>
 
 <!-- Name banner (centered, smaller SVG) -->
@@ -10,7 +10,7 @@
 
 <!-- Short status message (centered) -->
 <div align="center">
-  Currently studying | Focused on Mastering Python
+  I’m Currently studying | Focused on Mastering Python
 </div>
 
 <hr style="border:1px solid #4FC3F7;"/>
