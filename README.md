@@ -5,12 +5,10 @@
 
 <!-- Name banner (centered, smaller SVG) -->
 <div align="center">
-  <img src="https://svg-banners.vercel.app/api?type=typeWriter&text1=Hey%20there%2C%20I%27m%20John%20Paulo%20Mendez&width=700&height=60" alt="John Paulo Mendez Banner" />
-</div>
-
+  <img src="https://svg-banners.vercel.app/api?type=typeWriter&text1=Hey%20there%2C%20I%27m%20John%20Paulo%20Mendez&width=700&height=60" alt="John Paulo Mendez Banner" /Pythoning
 <!-- Short status message (centered) -->
 <div align="center">
-  Currently studying | Focused on Mastering Python
+  Currently studying | Focused on learning Python
 </div>
 
 <hr style="border:1px solid #4FC3F7;"/>
