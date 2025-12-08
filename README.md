@@ -6,7 +6,7 @@
 <!-- Name banner (centered, smaller SVG) -->
 <div align="center">
   <img src="https://svg-banners.vercel.app/api?type=typeWriter&text1=Hey%20there%2C%20I%27m%20John%20Paulo%20Mendez&width=700&height=60" alt="John Paulo Mendez Banner" /Pythoning
-<!-- Short status message (centered) -->
+
 <div align="center">
   Currently studying | Focused on learning Python
 </div>
@@ -24,9 +24,9 @@
 <hr style="border:1px solid #4FC3F7;"/>
 
 ## About Me
-- I am currently mastering Python  
+- I am currently Familiarizing Python  
 - My goal is to build projects, share them here, and grow step by step  
-- Interested in backend development and problem-solving
+- Interested in Scripting and Automation
 
 <hr style="border:1px solid #4FC3F7;"/>
 
