@@ -1,11 +1,12 @@
 <div align="center">
 
-![Header](https://capsule-render.com/api?type=waving&color=0:6a11cb,100:2575fc&height=200&section=header&text=John%20Paulo%20Mendez&fontSize=45&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Computer%20Science%20Student%20%7C%20Python%20%26%20Automation&descAlignY=58&descSize=18)
+<img src="PASTE_YOUR_GIF_LINK_HERE" width="100%" alt="banner">
+
+<h1 style="margin-top:-10px;">John Paulo Mendez</h1>
+
+<p style="color:#8ecae6; margin-top:-15px;">📍 Philippines · 🎓 BSCS Student</p>
 
 </div>
-
-# Hey there! 👋
-📍 Philippines · 🎓 BSCS Student
 
 ---
 ### About me
