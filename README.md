@@ -9,6 +9,7 @@ This Fella is a Computer Science student from the Philippines, currently learnin
   
 - 💡 Always experimenting with small automation ideas that solve a real (or fun) problem
   jdjdjd
+  hshsnsn
 ---
 ### 💻 Tech Stack
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
