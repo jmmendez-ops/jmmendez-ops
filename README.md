@@ -31,11 +31,13 @@ I'm a computer science student from the Philippines, currently learning the rope
 
 ---
 
-### Things about me
+### Fun facts
 
-- 12 cats and 2 dogs to feed my real full-time job
-- Learning to code between school, projects, and pet duty
-- Still figuring things out, still trying my best
+- 12 cats and 2 dogs to feed
+- Love Reading Manwha & Manga
+- Play lots of Gacha Games
+- I enjoy Termux tweaking 
+
 
 ---
 
