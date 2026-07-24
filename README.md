@@ -6,16 +6,12 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - I have a bunch of projects in progress (currently private, but releasing them soon)
 - 💡 Always experimenting with small automation ideas that solve a real (or fun) problem
   
-![shine](https://raw.githubusercontent.com/jmmendez-ops/jmmendez-ops/main/shine.svg)
-
 ---
 ### 🌐 Socials
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](PASTE_LINKEDIN_LINK_HERE)
 [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](PASTE_FACEBOOK_LINK_HERE)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](PASTE_INSTAGRAM_LINK_HERE)
 
-
----
 ### Tech Stack
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
