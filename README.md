@@ -1,17 +1,18 @@
-<div align="center">
-
-# Hey there!👋 I'm John Paulo Mendez
-📍 Philippines · 🎓 BSCS Student
-
-</div>
-
 ---
-### About me
+### 📝 About Me
 This Fella is a computer science student from the Philippines, currently learning the ropes of software development. I like turning small ideas into working tools, mostly through Python automation.
 - 🐍 I build Python automation scripts (things like bulk credential/hash testing tools using plain `.txt` input files)
 - Currently learning Dart & Flutter to move into mobile app development
 - I have a bunch of projects in progress (currently private, but releasing them soon)
 - 💡 Always experimenting with small automation ideas that solve a real (or fun) problem
+
+---
+### 🌐 Socials
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](PASTE_LINKEDIN_LINK_HERE)
+[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](PASTE_FACEBOOK_LINK_HERE)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](PASTE_INSTAGRAM_LINK_HERE)
+
+![shine](https://raw.githubusercontent.com/jmmendez-ops/jmmendez-ops/main/shine.svg)
 
 ---
 ### Tech Stack
