@@ -1,6 +1,6 @@
 <div align="center">
 
-# Hey there! I'm Dez_byte 👋
+# Hey there!👋
 
 📍 Philippines · 🎓 BSCS Student
 
