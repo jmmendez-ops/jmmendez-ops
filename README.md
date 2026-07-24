@@ -6,38 +6,36 @@
 
 </div>
 
-
+---
 
 ### About me
 
-I'm a computer science student from the Philippines, currently learning the ropes of software development. I like turning small ideas into working tools  mostly through Python automation.
+This Fella is a computer science student from the Philippines, currently learning the ropes of software development. I like turning small ideas into working tools — mostly through Python automation.
 
-- 🐍 I build Python automation scripts  things like bulk credential/hash testing tools using plain `.txt` input files
-- Currently learning Dart & Flutter to move into mobile app development
-- I have a bunch of projects in progress  currently private, but releasing them soon
+- 🐍 I build Python automation scripts (things like bulk credential/hash testing tools using plain `.txt` input files)
+-  Currently learning **Dart & Flutter** to move into mobile app development
+-  I have a bunch of projects in progress (currently private, but releasing them soon)
 - 💡 Always experimenting with small automation ideas that solve a real (or fun) problem
 
 ---
 
 ### Tech Stack
 
-<div align="center">
+<img src="https://skillicons.dev/icons?i=python,django,dart,flutter" alt="Python, Django, Dart, Flutter" />
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+### Tools
 
-</div>
+<img src="https://skillicons.dev/icons?i=pycharm,figma" alt="PyCharm, Figma" />
+<img src="https://img.shields.io/badge/Termux-000000?style=for-the-badge&logo=gnu-bash&logoColor=green" alt="Termux" height="48" />
 
 ---
 
 ### Fun facts
 
-- 12 cats and 2 dogs to feed
-- Love Reading Manwha & Manga
-- Play lots of Gacha Games
-- I enjoy Termux tweaking 
-
+-  12 cats and 2 dogs to feed
+-  Love reading manhwa & manga
+- 🎮 Play lots of gacha games
+-  I enjoy Termux tweaking
 
 ---
 
