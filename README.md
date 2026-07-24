@@ -37,6 +37,6 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 <div align="center">
 
 ![projects box](https://raw.githubusercontent.com/jmmendez-ops/jmmendez-ops/main/projects_box.svg)
-![arrow](https://raw.githubusercontent.com/jmmendez-ops/jmmendez-ops/main/arro.svg)
+![arrow](https://raw.githubusercontent.com/jmmendez-ops/jmmendez-ops/main/arrow.svg)
 
 </div>
