@@ -1,8 +1,4 @@
-<div align="center">
-
-![Header](https://capsule-render.vercel.app/api?type=wave&color=0:FFD1DC,50:F7A8B8,100:E88AA0&height=150&section=header&text=John%20Paulo%20Mendez&fontSize=40&fontColor=ffffff&fontAlignY=45&animation=fadeIn)
-
-</div>
+<div>
 
 # Hey there! 👋
 📍 Philippines · 🎓 BSCS Student
