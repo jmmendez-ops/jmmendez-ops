@@ -10,10 +10,10 @@
 
 ### About me
 
-This Fella is a computer science student from the Philippines, currently learning the ropes of software development. I like turning small ideas into working tools — mostly through Python automation.
+This Fella is a computer science student from the Philippines, currently learning the ropes of software development. I like turning small ideas into working tools, mostly through Python automation.
 
 - 🐍 I build Python automation scripts (things like bulk credential/hash testing tools using plain `.txt` input files)
-- Currently learning **Dart & Flutter** to move into mobile app development
+- Currently learning Dart & Flutter to move into mobile app development
 - I have a bunch of projects in progress (currently private, but releasing them soon)
 - 💡 Always experimenting with small automation ideas that solve a real (or fun) problem
 
@@ -45,6 +45,6 @@ This Fella is a computer science student from the Philippines, currently learnin
 
 <div align="center">
 
-*More projects coming soon — stay tuned.*
+*More projects coming soon. stay tuned.*
 
 </div>
