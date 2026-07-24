@@ -6,15 +6,15 @@
 
 </div>
 
----
+
 
 ### About me
 
-I'm a computer science student from the Philippines, currently learning the ropes of software development one project at a time. I like turning small ideas into working tools — mostly through Python automation.
+I'm a computer science student from the Philippines, currently learning the ropes of software development one project at a time. I like turning small ideas into working tools  mostly through Python automation.
 
-- 🐍 I build Python automation scripts — things like bulk credential/hash testing tools using plain `.txt` input files
-- Currently learning **Dart & Flutter** to move into mobile app development
-- I have a bunch of projects in progress — currently private, but releasing them soon
+- 🐍 I build Python automation scripts  things like bulk credential/hash testing tools using plain `.txt` input files
+- Currently learning Dart & Flutter to move into mobile app development
+- I have a bunch of projects in progress  currently private, but releasing them soon
 - 💡 Always experimenting with small automation ideas that solve a real (or fun) problem
 
 ---
@@ -33,7 +33,7 @@ I'm a computer science student from the Philippines, currently learning the rope
 
 ### Things about me
 
-- 12 cats and 2 dogs to feed — my real full-time job
+- 12 cats and 2 dogs to feed my real full-time job
 - Learning to code between school, projects, and pet duty
 - Still figuring things out, still trying my best
 
