@@ -5,6 +5,7 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - Currently learning Dart & Flutter to move into mobile app development
 - I have a bunch of projects in progress (currently private, but releasing them soon)
 - 💡 Always experimenting with small automation ideas that solve a real (or fun) problem
+  
 ![shine](https://raw.githubusercontent.com/jmmendez-ops/jmmendez-ops/main/shine.svg)
 
 ---
