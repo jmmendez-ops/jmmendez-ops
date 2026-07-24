@@ -1,7 +1,6 @@
 ---
 ### 📝 About Me
 This Fella is a Computer Science student from the Philippines, currently learning the ropes of software development. I like turning small ideas into working tools, mostly through Python automation.
-
 - 🐍 I build Python automation scripts (things like bulk credential/hash testing tools using plain `.txt` input files)
   
 - Currently learning Dart & Flutter to move into mobile app development
@@ -11,8 +10,6 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - 💡 Always experimenting with small automation ideas that solve a real (or fun) problem
   
 ---
-
-
 ### 💻 Tech Stack
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
@@ -35,10 +32,13 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - Love reading manhwa & manga
 - 🎮 Play lots of gacha games
 - I enjoy Termux tweaking
-
 ---
 <div align="center">
 
 *More projects coming soon. stay tuned.*
+
+**Feel free to check my projects below**
+
+![arrow](https://raw.githubusercontent.com/jmmendez-ops/jmmendez-ops/main/arrow.svg)
 
 </div>
