@@ -1,0 +1,24 @@
+<svg width="900" height="26" viewBox="0 0 900 26" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="track" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip"><rect x="0" y="0" width="900" height="26" rx="13"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+    <rect x="0" y="0" width="900" height="26" fill="url(#track)"/>
+    <rect x="-900" y="0" width="2700" height="26" fill="url(#shine)">
+      <animateTransform attributeName="transform" attributeType="XML" type="translate"
+        from="0 0" to="900 0" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>
