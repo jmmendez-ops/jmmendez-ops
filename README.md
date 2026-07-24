@@ -1,6 +1,6 @@
 <div align="center">
 
-# Hey there! John Paulo Mendez Here👋
+# Hey there!👋
 📍 Philippines · 🎓 BSCS Student
 
 </div>
