@@ -1,12 +1,11 @@
 <div align="center">
 
-<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWVtNnI2eWdvMXRtOWltYnFsdGY4c3l2dmF5dGY0NmNiaHV6NDI5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FWtVYDHIxgGgE/giphy.gif" width="100%" alt="banner">
-
-<h1 style="margin-top:-10px;">John Paulo Mendez</h1>
-
-<p style="color:#8ecae6; margin-top:-15px;">📍 Philippines · 🎓 BSCS Student</p>
+![Header](https://capsule-render.com/api?type=waving&color=0:FFD1DC,50:F7A8B8,100:E88AA0&height=150&section=header&text=John%20Paulo%20Mendez&fontSize=40&fontColor=ffffff&fontAlignY=45&animation=fadeIn)
 
 </div>
+
+# Hey there! 👋
+📍 Philippines · 🎓 BSCS Student
 
 ---
 ### About me
