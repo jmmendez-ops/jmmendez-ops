@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="[(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWVtNnI2eWdvMXRtOWltYnFsdGY4c3l2dmF5dGY0NmNiaHV6NDI5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FWtVYDHIxgGgE/giphy.gif)" width="100%" alt="banner">
+<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWVtNnI2eWdvMXRtOWltYnFsdGY4c3l2dmF5dGY0NmNiaHV6NDI5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FWtVYDHIxgGgE/giphy.gif" width="100%" alt="banner">
 
 <h1 style="margin-top:-10px;">John Paulo Mendez</h1>
 
