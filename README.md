@@ -5,6 +5,7 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - Currently learning Dart & Flutter to move into mobile app development
 - I have a bunch of projects in progress (currently private, but releasing them soon)
 - 💡 Always experimenting with small automation ideas that solve a real (or fun) problem
+![shine](https://raw.githubusercontent.com/jmmendez-ops/jmmendez-ops/main/shine.svg)
 
 ---
 ### 🌐 Socials
@@ -12,7 +13,6 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](PASTE_FACEBOOK_LINK_HERE)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](PASTE_INSTAGRAM_LINK_HERE)
 
-![shine](https://raw.githubusercontent.com/jmmendez-ops/jmmendez-ops/main/shine.svg)
 
 ---
 ### Tech Stack
