@@ -40,5 +40,5 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 <br>
 
 <p align="center">
-  <img src="assets/coming_soon.svg" width="100%">
+  <img src="coming_soon.svg" width="100%">
 </p>
