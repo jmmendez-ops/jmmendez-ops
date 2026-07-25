@@ -38,6 +38,6 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 ---
 <div align="center">
 
-![Coming soon](assets/coming_soon_banner.svg)
+![Coming soon](coming_soon_banner.svg)
 
 </div>
