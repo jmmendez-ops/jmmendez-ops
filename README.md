@@ -2,7 +2,7 @@
 ### 📝 About Me
 This Fella is a Computer Science student from the Philippines, currently learning the ropes of software development. I like turning small ideas into working tools, mostly through Python automation.
 
--🐍 I Build Python automation scripts (such as Credential stuffing tool using `.txt` as input files and other stuff)
+-🐍 I Build Python automation scripts (such as  using `.txt` as input files and other stuff)
   
 - Currently learning Dart & Flutter to move into mobile app development
   
@@ -36,8 +36,9 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - 🎮 Play lots of gacha games
 - I enjoy Termux tweaking
 ---
-<div align="center">
-  
-![Coming soon](coming_soon.svg)
 
-</div>
+<br>
+
+<p align="center">
+  <img src="assets/coming_soon_banner.svg" width="100%">
+</p>
