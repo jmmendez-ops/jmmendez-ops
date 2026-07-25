@@ -37,5 +37,7 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - I enjoy Termux tweaking
 ---
 <div align="center">
+  
 ![Coming soon](coming_soon.svg)
+
 </div>
