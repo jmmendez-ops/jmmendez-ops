@@ -38,6 +38,8 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 ---
 <div align="center">
 
-![Stay Tuned](https://img.shields.io/badge/Stay%20Tuned-More%20Projects%20Coming-black?style=for-the-badge)
+---
+**STAY TUNED FOR MORE PROJECTS**
+---
 
 </div>
