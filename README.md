@@ -1,7 +1,8 @@
 ---
 ### 📝 About Me
 This Fella is a Computer Science student from the Philippines, currently learning the ropes of software development. I like turning small ideas into working tools, mostly through Python automation.
-- 🐍 I build Python automation scripts (things like bulk credential/hash testing tools using plain `.txt` input files)
+
+-🐍 I Build Python automation scripts such as Authorized security testing, including automated authentication testing, credential validation, and API/web application testing using `.txt` input files.
   
 - Currently learning Dart & Flutter to move into mobile app development
   
