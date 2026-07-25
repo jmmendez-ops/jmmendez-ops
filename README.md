@@ -35,11 +35,9 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - Love reading manhwa & manga
 - 🎮 Play lots of gacha games
 - I enjoy Termux tweaking
----
+- 
 <div align="center">
-
 ---
 **STAY TUNED FOR MORE PROJECTS**
 ---
-
 </div>
