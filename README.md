@@ -2,7 +2,8 @@
 ### 📝 About Me
 This Fella is a Computer Science student from the Philippines, currently learning the ropes of software development. I like turning small ideas into working tools, mostly through Python automation.
 
--🐍 I Build Python automation scripts. Things like file parsers, batch processors, and small tools that take .txt/.csv input and turn repetitive tasks into one command.
+-🐍 I Build Python automation scripts. Things like file parsers, batch processors, and small tools that take .txt/.csv input and turn
+     repetitive tasks into one command.
   
 - Currently learning Dart & Flutter to move into mobile app development
   
