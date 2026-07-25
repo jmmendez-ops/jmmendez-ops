@@ -37,5 +37,5 @@ This Fella is a Computer Science student from the Philippines, currently learnin
   
 ---
 
-**STAY TUNED FOR MORE PROJECTS**
+**Feel Free to Checkout My PINS**
 </div>
