@@ -37,5 +37,5 @@ This Fella is a Computer Science student from the Philippines, currently learnin
   
 ---
 
-**CHECKOUT MY PINS**
+**Checkout my Repo**
 </div>
