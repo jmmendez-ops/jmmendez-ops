@@ -36,6 +36,8 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - 🎮 Play lots of gacha games
 - I enjoy Termux tweaking
 ---
-<center>
-  ### More Projects Comming Soon
-</center>
+<div align="center">
+
+![Stay Tuned](https://img.shields.io/badge/Stay%20Tuned-More%20Projects%20Coming-black?style=for-the-badge)
+
+</div>
