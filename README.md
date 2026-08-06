@@ -27,3 +27,7 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 
 ---
 ### Fun facts
+- 12 cats and 2 dogs to feed
+- Love reading manhwa & manga
+- 🎮 Play lots of gacha games
+- I enjoy Termux tweaking
