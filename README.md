@@ -5,7 +5,7 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - 🐍 I like Building Python automation scripts.  Things like Credential stuffing tool and things such as file parsers, batch processor and small tools that take .txt/.csv input and turn repetitive tasks into one command.
 - Currently exploring other tech stacks such as React and Node.js to broaden my full-stack development skills.
 - I have a bunch of projects in progress (currently private, but releasing them soon)
-- 💡 Always experimenting with small automation ideas that solve a real (or fun) problems
+- 💡 Always experimenting with small automation ideas that solve a real (or fun) problem
 
 ---
 ## 💻 Tech Stack
