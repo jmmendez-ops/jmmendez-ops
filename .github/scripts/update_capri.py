@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import base64
+import html
 import json
 import random
 import re
+import textwrap
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
@@ -20,28 +22,89 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 README_PATH = REPO_ROOT / "README.md"
 SVG_PATH = REPO_ROOT / "assets" / "capri-roam.svg"
 
-SVG_WIDTH = 260
-SVG_HEIGHT = 240
+SVG_WIDTH = 380
+SVG_HEIGHT = 230
 SWITCH_SECONDS = 10
 
 
 @dataclass(frozen=True)
-class CapriAnimation:
-    """Represents a Capri character animation asset."""
+class CapriState:
+    """Represents a Capri desktop state with animation and dialogue lines."""
 
     filename: str
-    alt: str
-    width: int = 220
-    height: int = 220
+    status: str
+    lines: tuple[str, ...]
+    width: int = 175
+    height: int = 175
 
 
-ANIMATIONS: tuple[CapriAnimation, ...] = (
-    CapriAnimation("idle.webp", "Capri hanging out and blinking", 220, 220),
-    CapriAnimation("glitch.webp", "Capri glitching", 220, 220),
-    CapriAnimation("sleep.webp", "Capri napping and booting back up", 220, 220),
-    CapriAnimation("perch.webp", "Capri perching on your window", 210, 210),
-    CapriAnimation("glitch.webp", "Capri glitching", 220, 220),
-    CapriAnimation("perch-music.webp", "Capri swaying to your music", 210, 210),
+CAPRI_STATES: tuple[CapriState, ...] = (
+    CapriState(
+        "talk.webp",
+        "HOLOCALL // TALKING",
+        (
+            "Hey choom! Net's been quiet. Time to stir up some trouble.",
+            "Voice needs my chip, choom. Watching your commits instead.",
+            "Got your profile open, choom. Looking sharp.",
+        ),
+        175,
+        175,
+    ),
+    CapriState(
+        "idle.webp",
+        "DESKTOP // HANGING OUT",
+        (
+            "Just hanging out on your desktop, choom.",
+            "Need a Python script for that? I'm watching.",
+            "Quiet day on the net. Staying right here.",
+        ),
+        175,
+        175,
+    ),
+    CapriState(
+        "perch.webp",
+        "WINDOW // PERCHING",
+        (
+            "Just perching on your profile edge. Don't mind me.",
+            "Nice view from up here, choom.",
+            "Sitting right beside your intro.",
+        ),
+        165,
+        165,
+    ),
+    CapriState(
+        "perch-music.webp",
+        "PLAYER // SWAYING",
+        (
+            "Good pick, choom. Swaying to your music.",
+            "Got the mini player running. Catching the beat.",
+            "Vibing on the window edge while you code.",
+        ),
+        165,
+        165,
+    ),
+    CapriState(
+        "sleep.webp",
+        "SYSTEM // NAPPING",
+        (
+            "Night night... booting back up soon.",
+            "Power-saving mode. Wake me if you push.",
+            "Catching a quick nap between commits.",
+        ),
+        175,
+        175,
+    ),
+    CapriState(
+        "glitch.webp",
+        "SIGNAL // GLITCHING",
+        (
+            "[SIGNAL GLITCH // RECONNECTING...]",
+            "[HOLOCALL STATIC // STABILIZING]",
+            "[PACKET DROP // REROUTING FEED]",
+        ),
+        175,
+        175,
+    ),
 )
 
 SIDE_SLOTS: tuple[str, ...] = ("hero_right", "hero_left")
@@ -58,17 +121,24 @@ def fetch_webp_data_uri(filename: str) -> str:
 
 
 def build_svg_widget() -> str:
-    """Cycle through all ANIMATIONS with clean hard cuts — no overlays, no extra effects."""
-    frames = list(ANIMATIONS)
-    random.shuffle(frames)
-    count = len(frames)
+    """Build a Capri desktop companion + holocall SVG cycling every 10s."""
+    states = list(CAPRI_STATES)
+    random.shuffle(states)
+    count = len(states)
     total_duration = count * SWITCH_SECONDS
     slot_pct = 100.0 / count
 
-    css_rules: list[str] = []
-    image_tags: list[str] = []
+    css_rules: list[str] = [
+        "    @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }",
+        "    @keyframes eq-bar { 0%, 100% { transform: scaleY(0.45); } 50% { transform: scaleY(1); } }",
+        "    .live-dot { animation: pulse-dot 1.8s ease-in-out infinite; }",
+        "    .eq { transform-box: fill-box; transform-origin: bottom; animation: eq-bar 0.9s ease-in-out infinite; }",
+        "    .eq-2 { animation-delay: 0.25s; }",
+        "    .eq-3 { animation-delay: 0.5s; }",
+    ]
+    state_groups: list[str] = []
 
-    for idx, anim in enumerate(frames):
+    for idx, state in enumerate(states):
         start_pct = idx * slot_pct
         end_pct = (idx + 1) * slot_pct
 
@@ -89,23 +159,60 @@ def build_svg_widget() -> str:
             f"    .c{idx} {{ opacity: 0; animation: c{idx} {total_duration}s steps(1,end) infinite; }}"
         )
 
-        max_x = max(10, SVG_WIDTH - anim.width - 10)
-        max_y = max(10, SVG_HEIGHT - anim.height - 10)
-        x_pos = random.randint(10, max_x)
-        y_pos = random.randint(10, max_y)
-        data_uri = fetch_webp_data_uri(anim.filename)
-        image_tags.append(
-            f'  <image class="c{idx}" x="{x_pos}" y="{y_pos}" '
-            f'width="{anim.width}" height="{anim.height}" href="{data_uri}" />'
+        line_text = random.choice(state.lines)
+        wrapped = textwrap.wrap(line_text, width=22)[:3]
+        tspans = "\n".join(
+            f'      <tspan x="24" dy="{0 if i == 0 else 16}">{html.escape(line)}</tspan>'
+            for i, line in enumerate(wrapped)
+        )
+
+        img_x = 195 + random.randint(0, 10)
+        img_y = 42 + random.randint(0, 12)
+        data_uri = fetch_webp_data_uri(state.filename)
+
+        status_color = "#fd004f" if state.filename == "glitch.webp" else "#01f76d"
+
+        state_groups.append(
+            f'  <g class="c{idx}">\n'
+            f'    <text x="24" y="72" fill="{status_color}" font-family="\'Share Tech Mono\', Consolas, monospace" '
+            f'font-size="10" font-weight="700" letter-spacing="0.8">{html.escape(state.status)}</text>\n'
+            f'    <text x="24" y="96" fill="#ece8f1" font-family="\'Share Tech Mono\', Consolas, monospace" '
+            f'font-size="12">\n{tspans}\n    </text>\n'
+            f'    <image x="{img_x}" y="{img_y}" width="{state.width}" height="{state.height}" href="{data_uri}" />\n'
+            f"  </g>"
         )
 
     styles = "\n".join(css_rules)
-    images = "\n".join(image_tags)
+    groups = "\n".join(state_groups)
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" '
         f'viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}" width="{SVG_WIDTH}" height="{SVG_HEIGHT}">\n'
         f"  <style>\n{styles}\n  </style>\n"
-        f"{images}\n</svg>\n"
+        # Chamfered dark cyberplate background (authentic Capri palette)
+        f'  <polygon points="12,2 {SVG_WIDTH - 2},2 {SVG_WIDTH - 2},{SVG_HEIGHT - 12} '
+        f'{SVG_WIDTH - 12},{SVG_HEIGHT - 2} 2,{SVG_HEIGHT - 2} 2,12" '
+        f'fill="#0b0914" stroke="#272030" stroke-width="1.5" />\n'
+        # Top holocall HUD bar
+        f'  <rect x="2" y="2" width="{SVG_WIDTH - 4}" height="30" fill="#120e19" opacity="0.95" />\n'
+        f'  <line x1="2" y1="32" x2="{SVG_WIDTH - 2}" y2="32" stroke="#272030" stroke-width="1" />\n'
+        f'  <circle class="live-dot" cx="18" cy="17" r="4" fill="#01f76d" />\n'
+        f'  <text x="28" y="21" fill="#ece8f1" font-family="\'Share Tech Mono\', Consolas, monospace" '
+        f'font-size="11" font-weight="700" letter-spacing="1">CAPRI // HOLOCALL</text>\n'
+        # Voice ring / equalizer bars + red call pill
+        f'  <rect class="eq" x="314" y="12" width="3" height="10" rx="1" fill="#01f76d" />\n'
+        f'  <rect class="eq eq-2" x="320" y="10" width="3" height="12" rx="1" fill="#01f76d" />\n'
+        f'  <rect class="eq eq-3" x="326" y="13" width="3" height="9" rx="1" fill="#01f76d" />\n'
+        f'  <rect x="338" y="10" width="28" height="14" rx="7" fill="#fd004f" />\n'
+        f'  <line x1="347" y1="17" x2="357" y2="17" stroke="#0b0914" stroke-width="2" stroke-linecap="round" />\n'
+        # Speech bubble card on the left
+        f'  <polygon points="14,50 188,50 188,162 178,172 14,172" '
+        f'fill="#1b1622" stroke="#272030" stroke-width="1" />\n'
+        f'  <rect x="14" y="50" width="3" height="122" fill="#fd004f" />\n'
+        # Footer hint inside widget
+        f'  <text x="16" y="208" fill="#a49cb0" font-family="\'Share Tech Mono\', Consolas, monospace" '
+        f'font-size="10">DESKTOP COMPANION · 10S SYNC</text>\n'
+        f"{groups}\n"
+        f"</svg>\n"
     )
 
 
@@ -146,7 +253,7 @@ def build_readme(side: str) -> str:
     instead of emojis.
     """
     capri_float = (
-        '<img src="assets/capri-roam.svg" alt="Capri companion" width="260" align="right">'
+        '<img src="assets/capri-roam.svg" alt="Capri desktop companion" width="360" align="right">'
     )
 
     hero_section = f"""{capri_float}
