@@ -20,8 +20,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 README_PATH = REPO_ROOT / "README.md"
 SVG_PATH = REPO_ROOT / "assets" / "capri-roam.svg"
 
-SVG_WIDTH = 200
-SVG_HEIGHT = 180
+SVG_WIDTH = 260
+SVG_HEIGHT = 240
 SWITCH_SECONDS = 10
 
 
@@ -31,16 +31,16 @@ class CapriAnimation:
 
     filename: str
     alt: str
-    width: int = 135
-    height: int = 135
+    width: int = 220
+    height: int = 220
 
 
 ANIMATIONS: tuple[CapriAnimation, ...] = (
-    CapriAnimation("idle.webp", "Capri hanging out and blinking", 135, 135),
-    CapriAnimation("glitch.webp", "Capri glitching", 135, 135),
-    CapriAnimation("sleep.webp", "Capri napping and booting back up", 135, 135),
-    CapriAnimation("perch.webp", "Capri perching on your window", 125, 125),
-    CapriAnimation("perch-music.webp", "Capri swaying to your music", 125, 125),
+    CapriAnimation("idle.webp", "Capri hanging out and blinking", 220, 220),
+    CapriAnimation("glitch.webp", "Capri glitching", 220, 220),
+    CapriAnimation("sleep.webp", "Capri napping and booting back up", 220, 220),
+    CapriAnimation("perch.webp", "Capri perching on your window", 210, 210),
+    CapriAnimation("perch-music.webp", "Capri swaying to your music", 210, 210),
 )
 
 SIDE_SLOTS: tuple[str, ...] = ("hero_right", "hero_left")
@@ -150,7 +150,7 @@ def build_readme(side: str) -> str:
     instead of emojis.
     """
     capri_float = (
-        '<img src="assets/capri-roam.svg" alt="Capri companion" width="200" align="right">'
+        '<img src="assets/capri-roam.svg" alt="Capri companion" width="260" align="right">'
     )
 
     hero_section = f"""{capri_float}
