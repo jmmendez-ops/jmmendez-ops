@@ -1,12 +1,5 @@
-<div align="center">
-  <a href="https://github.com/lachydotmcg/capri-desktop">
-    <img src="https://raw.githubusercontent.com/lachydotmcg/capri-desktop/main/assets/readme/perch.webp" alt="Capri perching on the divider" width="120">
-  </a>
-  <br>
-  <sub>Capri by <a href="https://github.com/lachydotmcg/capri-desktop">lachydotmcg/capri-desktop</a></sub>
-</div>
-
 ---
+
 ### 📝 About Me
 This Fella is a Computer Science student from the Philippines, currently learning the ropes of software development. I like turning small ideas into working tools, mostly through Python automation.
 
@@ -16,8 +9,8 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - 💡 Always experimenting with small automation ideas that solve a real (or fun) problems
 
 ---
-## 💻 Tech Stack
 
+## 💻 Tech Stack
 
 ### Languages & Markup
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -39,6 +32,10 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
+<table>
+  <tr>
+    <td valign="top">
+
 ### Tools
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
@@ -48,9 +45,23 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 ![Android Studio](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+
+    </td>
+    <td align="center" valign="middle" width="160">
+
+<a href="https://github.com/lachydotmcg/capri-desktop" title="Capri by lachydotmcg/capri-desktop"><img src="https://raw.githubusercontent.com/lachydotmcg/capri-desktop/main/assets/readme/idle.webp" alt="Capri idling and blinking" width="130"></a>
+
+    </td>
+  </tr>
+</table>
+
 ---
+
 ### Fun facts
 - 12 cats and 2 dogs to feed
 - Love reading manhwa & manga
 - 🎮 Play lots of gacha games
 - I enjoy Termux tweaking
+
+<div align="right"><sub>Capri companion art by <a href="https://github.com/lachydotmcg/capri-desktop">lachydotmcg/capri-desktop</a></sub></div>
+<!-- capri-state: {"animation": "idle.webp", "slot": "tech_tools"} -->
