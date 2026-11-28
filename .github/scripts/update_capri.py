@@ -36,13 +36,11 @@ class CapriAnimation:
 
 
 ANIMATIONS: tuple[CapriAnimation, ...] = (
-    CapriAnimation("idle.webp", "Capri idling and blinking", 135, 135),
-    CapriAnimation("talk.webp", "Capri talking", 135, 135),
-    CapriAnimation("tossed.webp", "Capri flailing while dragged", 135, 135),
+    CapriAnimation("idle.webp", "Capri hanging out and blinking", 135, 135),
     CapriAnimation("glitch.webp", "Capri glitching", 135, 135),
     CapriAnimation("sleep.webp", "Capri napping and booting back up", 135, 135),
-    CapriAnimation("perch.webp", "Capri perching and blinking", 125, 125),
-    CapriAnimation("perch-music.webp", "Capri swaying to music", 125, 125),
+    CapriAnimation("perch.webp", "Capri perching on your window", 125, 125),
+    CapriAnimation("perch-music.webp", "Capri swaying to your music", 125, 125),
 )
 
 SIDE_SLOTS: tuple[str, ...] = ("hero_right", "hero_left")

@@ -1,4 +1,4 @@
-<a href="https://github.com/lachydotmcg/capri-desktop" title="Capri by lachydotmcg/capri-desktop"><img src="assets/capri-roam.svg" alt="Capri companion" width="200" align="left"></a>
+<a href="https://github.com/lachydotmcg/capri-desktop" title="Capri by lachydotmcg/capri-desktop"><img src="assets/capri-roam.svg" alt="Capri companion" width="200" align="right"></a>
 
 ## 👋 Hey, I'm John Paulo Mendez
 
@@ -11,7 +11,7 @@
 - 🔒 Several **private projects** in progress
 - 💡 Always experimenting with small ideas that solve real (or fun) problems
 
-<br clear="left">
+<br clear="right">
 
 ## 💻 Tech Stack
 
@@ -53,4 +53,4 @@
 - 📱 Enjoy **Termux** tweaking
 
 <div align="right"><sub>Capri companion art by <a href="https://github.com/lachydotmcg/capri-desktop">lachydotmcg/capri-desktop</a></sub></div>
-<!-- capri-state: {"side": "hero_left", "interval_sec": 10} -->
+<!-- capri-state: {"side": "hero_right", "interval_sec": 10} -->
