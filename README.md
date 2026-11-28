@@ -32,10 +32,6 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
-<table>
-  <tr>
-    <td valign="top">
-
 ### Tools
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
@@ -46,15 +42,6 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
-    </td>
-    <td align="center" valign="middle" width="160">
-
-<a href="https://github.com/lachydotmcg/capri-desktop" title="Capri by lachydotmcg/capri-desktop"><img src="https://raw.githubusercontent.com/lachydotmcg/capri-desktop/main/assets/readme/idle.webp" alt="Capri idling and blinking" width="130"></a>
-
-    </td>
-  </tr>
-</table>
-
 ---
 
 ### Fun facts
@@ -63,5 +50,9 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - 🎮 Play lots of gacha games
 - I enjoy Termux tweaking
 
+<div align="center">
+  <a href="https://github.com/lachydotmcg/capri-desktop" title="Capri by lachydotmcg/capri-desktop"><img src="https://raw.githubusercontent.com/lachydotmcg/capri-desktop/main/assets/readme/sleep.webp" alt="Capri napping and booting back up" width="130"></a>
+</div>
+
 <div align="right"><sub>Capri companion art by <a href="https://github.com/lachydotmcg/capri-desktop">lachydotmcg/capri-desktop</a></sub></div>
-<!-- capri-state: {"animation": "idle.webp", "slot": "tech_tools"} -->
+<!-- capri-state: {"animation": "sleep.webp", "slot": "bottom_center"} -->
