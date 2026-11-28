@@ -51,3 +51,6 @@
 - <img src="https://api.iconify.design/lucide/book-open.svg?color=%2358a6ff" width="16" height="16" align="absmiddle" alt="book-open"> Love reading **manhwa & manga**
 - <img src="https://api.iconify.design/lucide/gamepad-2.svg?color=%23a371f7" width="16" height="16" align="absmiddle" alt="gamepad-2"> Play lots of **gacha games**
 - <img src="https://api.iconify.design/lucide/smartphone.svg?color=%233fb950" width="16" height="16" align="absmiddle" alt="smartphone"> Enjoy **Termux** tweaking
+
+<div align="right"><sub>Capri companion art by <a href="https://github.com/lachydotmcg/capri-desktop">lachydotmcg/capri-desktop</a></sub></div>
+<!-- capri-state: {"side": "hero_right", "interval_sec": 10} -->
