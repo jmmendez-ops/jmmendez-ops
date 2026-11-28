@@ -35,9 +35,10 @@ class CapriAnimation:
     height: int = 220
 
 
-ANIMATIONS: tuple[CapriAnimation, ...] = (
+GLITCH_ANIMATION = CapriAnimation("glitch.webp", "Capri glitching", 220, 220)
+
+POSE_ANIMATIONS: tuple[CapriAnimation, ...] = (
     CapriAnimation("idle.webp", "Capri hanging out and blinking", 220, 220),
-    CapriAnimation("glitch.webp", "Capri glitching", 220, 220),
     CapriAnimation("sleep.webp", "Capri napping and booting back up", 220, 220),
     CapriAnimation("perch.webp", "Capri perching on your window", 210, 210),
     CapriAnimation("perch-music.webp", "Capri swaying to your music", 210, 210),
@@ -56,61 +57,28 @@ def fetch_webp_data_uri(filename: str) -> str:
     return f"data:image/webp;base64,{encoded}"
 
 
-def generate_lightning_paths() -> str:
-    """Create randomized cyberpunk lightning bolt SVG paths for transitions."""
-    bolts: list[str] = []
-    colors = ("#05d9e8", "#ff2a6d", "#05d9e8")
-    for idx, color in enumerate(colors):
-        x = random.randint(45, SVG_WIDTH - 45)
-        y = 15
-        points = [(x, y)]
-        steps = 6
-        for step in range(1, steps + 1):
-            x = max(20, min(SVG_WIDTH - 20, x + random.randint(-28, 28)))
-            y = 15 + int((SVG_HEIGHT - 30) * (step / steps))
-            points.append((x, y))
-        d = "M " + " L ".join(f"{px} {py}" for px, py in points)
-        bolts.append(
-            f'    <path class="bolt-{idx}" d="{d}" fill="none" stroke="{color}" '
-            f'stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.55" />\n'
-            f'    <path class="bolt-{idx}" d="{d}" fill="none" stroke="#ffffff" '
-            f'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />'
-        )
-    return "\n".join(bolts)
-
-
 def build_svg_widget() -> str:
-    """Build a compact SVG with smooth fade + lightning transition every 10s."""
-    shuffled = list(ANIMATIONS)
+    """Build a compact SVG that uses Capri's own glitch.webp on every 10s switch."""
+    shuffled = list(POSE_ANIMATIONS)
     random.shuffle(shuffled)
     count = len(shuffled)
     total_duration = count * SWITCH_SECONDS
     slot_pct = 100.0 / count
-    fade_pct = 1.4  # ~0.7s smooth cross-fade over a 50s total loop
+    fade_pct = 1.75  # ~0.7s cross-fade over a 40s loop
 
     css_rules: list[str] = [
         "    .capri-frame { transform-box: fill-box; transform-origin: center; }",
-        "    @keyframes capri-lightning {",
-        "      0% { opacity: 0; }",
-        "      1.5% { opacity: 1; }",
-        "      3.0% { opacity: 0.25; }",
-        "      4.5% { opacity: 0.9; }",
-        "      7.5% { opacity: 0; }",
-        "      100% { opacity: 0; }",
+        "    @keyframes capri-glitch-transition {",
+        "      0% { opacity: 0; transform: scale(0.98); }",
+        "      2% { opacity: 1; transform: scale(1.02); }",
+        "      9% { opacity: 1; transform: scale(1); }",
+        "      14% { opacity: 0; transform: scale(0.98); }",
+        "      100% { opacity: 0; transform: scale(0.98); }",
         "    }",
-        "    @keyframes capri-bolt-flicker {",
-        "      0%, 100% { stroke-dashoffset: 260; }",
-        "      4% { stroke-dashoffset: 0; }",
-        "      8% { stroke-dashoffset: -260; }",
-        "    }",
-        "    .capri-lightning {",
+        "    .capri-glitch {",
         "      opacity: 0;",
-        f"      animation: capri-lightning {SWITCH_SECONDS}s ease-out infinite;",
+        f"      animation: capri-glitch-transition {SWITCH_SECONDS}s ease-in-out infinite;",
         "      pointer-events: none;",
-        "    }",
-        "    .capri-lightning path {",
-        "      stroke-dasharray: 260;",
-        f"      animation: capri-bolt-flicker {SWITCH_SECONDS}s linear infinite;",
         "    }",
     ]
     image_tags: list[str] = []
@@ -125,27 +93,27 @@ def build_svg_widget() -> str:
 
         if idx == 0:
             keyframes = (
-                "0% { opacity: 0.5; transform: translateY(2px) scale(0.985); }\n"
-                f"      {fade_pct:.2f}% {{ opacity: 1; transform: translateY(0) scale(1); }}\n"
-                f"      {end_pct - fade_pct:.2f}% {{ opacity: 1; transform: translateY(0) scale(1); }}\n"
-                f"      {end_pct + 0.6:.2f}% {{ opacity: 0; transform: translateY(-4px) scale(0.97); }}\n"
-                f"      {100.0 - fade_pct:.2f}% {{ opacity: 0; transform: translateY(4px) scale(0.97); }}\n"
-                "      100% { opacity: 0.5; transform: translateY(2px) scale(0.985); }"
+                "0% { opacity: 0.4; transform: scale(0.98); }\n"
+                f"      {fade_pct * 2:.2f}% {{ opacity: 1; transform: scale(1); }}\n"
+                f"      {end_pct - 0.5:.2f}% {{ opacity: 1; transform: scale(1); }}\n"
+                f"      {end_pct + 1.25:.2f}% {{ opacity: 0; transform: scale(0.98); }}\n"
+                f"      {100.0 - 0.5:.2f}% {{ opacity: 0; transform: scale(0.98); }}\n"
+                "      100% { opacity: 0.4; transform: scale(0.98); }"
             )
         elif idx == count - 1:
             keyframes = (
-                f"0% {{ opacity: 0; transform: translateY(4px) scale(0.97); }}\n"
-                f"      {start_pct - 0.6:.2f}% {{ opacity: 0; transform: translateY(4px) scale(0.97); }}\n"
-                f"      {start_pct + fade_pct:.2f}% {{ opacity: 1; transform: translateY(0) scale(1); }}\n"
-                f"      {end_pct - fade_pct:.2f}% {{ opacity: 1; transform: translateY(0) scale(1); }}\n"
-                "      100% { opacity: 0; transform: translateY(-4px) scale(0.97); }"
+                f"0% {{ opacity: 0; transform: scale(0.98); }}\n"
+                f"      {start_pct + 0.5:.2f}% {{ opacity: 0; transform: scale(0.98); }}\n"
+                f"      {start_pct + fade_pct * 2:.2f}% {{ opacity: 1; transform: scale(1); }}\n"
+                f"      {end_pct - 0.5:.2f}% {{ opacity: 1; transform: scale(1); }}\n"
+                "      100% { opacity: 0; transform: scale(0.98); }"
             )
         else:
             keyframes = (
-                f"0%, {start_pct - 0.6:.2f}% {{ opacity: 0; transform: translateY(4px) scale(0.97); }}\n"
-                f"      {start_pct + fade_pct:.2f}% {{ opacity: 1; transform: translateY(0) scale(1); }}\n"
-                f"      {end_pct - fade_pct:.2f}% {{ opacity: 1; transform: translateY(0) scale(1); }}\n"
-                f"      {end_pct + 0.6:.2f}%, 100% {{ opacity: 0; transform: translateY(-4px) scale(0.97); }}"
+                f"0%, {start_pct + 0.5:.2f}% {{ opacity: 0; transform: scale(0.98); }}\n"
+                f"      {start_pct + fade_pct * 2:.2f}% {{ opacity: 1; transform: scale(1); }}\n"
+                f"      {end_pct - 0.5:.2f}% {{ opacity: 1; transform: scale(1); }}\n"
+                f"      {end_pct + 1.25:.2f}%, 100% {{ opacity: 0; transform: scale(0.98); }}"
             )
 
         css_rules.append(
@@ -164,15 +132,21 @@ def build_svg_widget() -> str:
             f'width="{anim.width}" height="{anim.height}" href="{data_uri}" />'
         )
 
+    glitch_uri = fetch_webp_data_uri(GLITCH_ANIMATION.filename)
+    glitch_x = (SVG_WIDTH - GLITCH_ANIMATION.width) // 2
+    glitch_y = (SVG_HEIGHT - GLITCH_ANIMATION.height) // 2
+    image_tags.append(
+        f'  <image class="capri-frame capri-glitch" x="{glitch_x}" y="{glitch_y}" '
+        f'width="{GLITCH_ANIMATION.width}" height="{GLITCH_ANIMATION.height}" href="{glitch_uri}" />'
+    )
+
     styles = "\n".join(css_rules)
     images = "\n".join(image_tags)
-    lightning_overlay = generate_lightning_paths()
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" '
         f'viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}" width="{SVG_WIDTH}" height="{SVG_HEIGHT}">\n'
         f"  <style>\n{styles}\n  </style>\n"
         f"{images}\n"
-        f'  <g class="capri-lightning">\n{lightning_overlay}\n  </g>\n'
         f"</svg>\n"
     )
 
