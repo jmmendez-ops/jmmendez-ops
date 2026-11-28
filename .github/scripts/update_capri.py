@@ -1,10 +1,12 @@
-"""Randomly rotates Capri's animation and position in the profile README."""
+"""Generates a 10s-switching Capri SVG banner and rotates its README.md section."""
 
 from __future__ import annotations
 
+import base64
 import json
 import random
 import re
+import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -13,7 +15,14 @@ CAPRI_RAW_BASE = (
     "https://raw.githubusercontent.com/lachydotmcg/capri-desktop/main/assets/readme"
 )
 STATE_PATTERN = re.compile(r"<!--\s*capri-state:\s*(\{.*?\})\s*-->")
-README_PATH = Path(__file__).resolve().parents[2] / "README.md"
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+README_PATH = REPO_ROOT / "README.md"
+SVG_PATH = REPO_ROOT / "assets" / "capri-roam.svg"
+
+SVG_WIDTH = 800
+SVG_HEIGHT = 160
+SWITCH_SECONDS = 10
 
 
 @dataclass(frozen=True)
@@ -23,30 +32,26 @@ class CapriAnimation:
     filename: str
     alt: str
     width: int = 120
+    height: int = 120
 
 
 ANIMATIONS: tuple[CapriAnimation, ...] = (
-    CapriAnimation("idle.webp", "Capri idling and blinking", 130),
-    CapriAnimation("talk.webp", "Capri talking", 130),
-    CapriAnimation("tossed.webp", "Capri flailing while dragged", 130),
-    CapriAnimation("glitch.webp", "Capri glitching", 130),
-    CapriAnimation("sleep.webp", "Capri napping and booting back up", 130),
-    CapriAnimation("perch.webp", "Capri perching and blinking", 115),
-    CapriAnimation("perch-music.webp", "Capri swaying to music", 115),
+    CapriAnimation("idle.webp", "Capri idling and blinking", 120, 120),
+    CapriAnimation("talk.webp", "Capri talking", 120, 120),
+    CapriAnimation("tossed.webp", "Capri flailing while dragged", 120, 120),
+    CapriAnimation("glitch.webp", "Capri glitching", 120, 120),
+    CapriAnimation("sleep.webp", "Capri napping and booting back up", 120, 120),
+    CapriAnimation("perch.webp", "Capri perching and blinking", 110, 110),
+    CapriAnimation("perch-music.webp", "Capri swaying to music", 110, 110),
 )
 
 SLOTS: tuple[str, ...] = (
-    "top_center",
-    "top_left",
-    "top_right",
-    "about_left",
-    "about_right",
-    "tech_header",
-    "tech_frameworks",
-    "tech_tools",
-    "fun_facts_right",
-    "bottom_center",
-    "bottom_right",
+    "top_banner",
+    "between_about_tech",
+    "inside_tech_frameworks",
+    "inside_tech_tools",
+    "between_tech_fun",
+    "bottom_banner",
 )
 
 ABOUT_ME_CONTENT = """### 📝 About Me
@@ -94,111 +99,139 @@ FUN_FACTS_CONTENT = """### Fun facts
 - I enjoy Termux tweaking"""
 
 
-def read_previous_state(readme_text: str) -> tuple[str | None, str | None]:
-    """Extract the previous animation filename and slot from README.md."""
+def fetch_webp_data_uri(filename: str) -> str:
+    """Download a Capri WebP animation and return it as a base64 data URI."""
+    url = f"{CAPRI_RAW_BASE}/{filename}"
+    req = urllib.request.Request(url, headers={"User-Agent": "capri-roam-bot/1.0"})
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        raw_bytes = resp.read()
+    encoded = base64.b64encode(raw_bytes).decode("ascii")
+    return f"data:image/webp;base64,{encoded}"
+
+
+def build_svg_banner() -> str:
+    """Build an SVG that switches Capri's animation and X/Y position every 10s."""
+    shuffled = list(ANIMATIONS)
+    random.shuffle(shuffled)
+    count = len(shuffled)
+    total_duration = count * SWITCH_SECONDS
+
+    css_rules: list[str] = []
+    image_tags: list[str] = []
+
+    for idx, anim in enumerate(shuffled):
+        start_pct = (idx * 100.0) / count
+        end_pct = ((idx + 1) * 100.0) / count
+        x_pos = random.randint(20, SVG_WIDTH - anim.width - 20)
+        y_pos = random.randint(5, SVG_HEIGHT - anim.height - 5)
+
+        if idx == 0:
+            keyframes = (
+                f"0%, {end_pct - 0.01:.2f}% {{ opacity: 1; }}\n"
+                f"      {end_pct:.2f}%, 100% {{ opacity: 0; }}"
+            )
+        else:
+            keyframes = (
+                f"0%, {start_pct - 0.01:.2f}% {{ opacity: 0; }}\n"
+                f"      {start_pct:.2f}%, {end_pct - 0.01:.2f}% {{ opacity: 1; }}\n"
+                f"      {end_pct:.2f}%, 100% {{ opacity: 0; }}"
+            )
+
+        css_rules.append(
+            f"    @keyframes capri-step-{idx} {{\n"
+            f"      {keyframes}\n"
+            f"    }}\n"
+            f"    .capri-{idx} {{\n"
+            f"      opacity: 0;\n"
+            f"      animation: capri-step-{idx} {total_duration}s steps(1, end) infinite;\n"
+            f"    }}"
+        )
+
+        data_uri = fetch_webp_data_uri(anim.filename)
+        image_tags.append(
+            f'  <image class="capri-{idx}" x="{x_pos}" y="{y_pos}" '
+            f'width="{anim.width}" height="{anim.height}" href="{data_uri}" />'
+        )
+
+    styles = "\n".join(css_rules)
+    images = "\n".join(image_tags)
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" '
+        f'viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}" width="{SVG_WIDTH}" height="{SVG_HEIGHT}">\n'
+        f"  <style>\n{styles}\n  </style>\n"
+        f"{images}\n"
+        f"</svg>\n"
+    )
+
+
+def read_previous_slot(readme_text: str) -> str | None:
+    """Extract the previous section slot from README.md."""
     match = STATE_PATTERN.search(readme_text)
     if not match:
-        return None, None
+        return None
     try:
         data = json.loads(match.group(1))
     except json.JSONDecodeError:
-        return None, None
-    return data.get("animation"), data.get("slot")
+        return None
+    return data.get("slot")
 
 
-def pick_next_state(
-    prev_animation: str | None, prev_slot: str | None
-) -> tuple[CapriAnimation, str]:
-    """Pick a new animation and slot, guaranteeing both change on each switch."""
-    anim_choices = [a for a in ANIMATIONS if a.filename != prev_animation]
-    slot_choices = [s for s in SLOTS if s != prev_slot]
-    return random.choice(anim_choices or ANIMATIONS), random.choice(slot_choices or SLOTS)
+def pick_next_slot(prev_slot: str | None) -> str:
+    """Pick a new README section slot, avoiding repeating the current one."""
+    choices = [s for s in SLOTS if s != prev_slot]
+    return random.choice(choices or SLOTS)
 
 
-def render_capri_img(anim: CapriAnimation) -> str:
-    """Render the linked Capri image tag."""
-    src = f"{CAPRI_RAW_BASE}/{anim.filename}"
+def render_banner_block() -> str:
+    """Render the Markdown/HTML block for the roaming Capri SVG banner."""
     return (
-        f'<a href="{CAPRI_REPO_URL}" title="Capri by lachydotmcg/capri-desktop">'
-        f'<img src="{src}" alt="{anim.alt}" width="{anim.width}">'
-        f"</a>"
+        '<div align="center">\n'
+        f'  <a href="{CAPRI_REPO_URL}" title="Capri by lachydotmcg/capri-desktop">\n'
+        '    <img src="assets/capri-roam.svg" alt="Capri roaming across the profile" width="100%">\n'
+        "  </a>\n"
+        "</div>"
     )
 
 
-def render_aligned_block(anim: CapriAnimation, align: str) -> str:
-    """Render a standalone aligned Capri block."""
-    return f'<div align="{align}">\n  {render_capri_img(anim)}\n</div>'
-
-
-def render_side_by_side(left_html: str, right_html: str) -> str:
-    """Render two blocks side-by-side using a borderless-friendly Markdown table."""
-    return (
-        "<table>\n"
-        "  <tr>\n"
-        f'    <td valign="top">\n\n{left_html}\n\n    </td>\n'
-        f'    <td align="center" valign="middle" width="160">\n\n{right_html}\n\n    </td>\n'
-        "  </tr>\n"
-        "</table>"
-    )
-
-
-def build_readme(anim: CapriAnimation, slot: str) -> str:
-    """Build the full README.md with Capri placed in the selected slot."""
-    img_tag = render_capri_img(anim)
+def build_readme(slot: str) -> str:
+    """Build the full README.md with the 10s-roaming Capri banner in the chosen slot."""
+    banner = render_banner_block()
     parts: list[str] = []
 
-    if slot in ("top_center", "top_left", "top_right"):
-        align = slot.split("_", 1)[1]
-        parts.append(render_aligned_block(anim, align))
+    if slot == "top_banner":
+        parts.append(banner)
 
     parts.append("---")
-
-    if slot == "about_left":
-        parts.append(
-            "<table>\n"
-            "  <tr>\n"
-            f'    <td align="center" valign="middle" width="160">\n\n{img_tag}\n\n    </td>\n'
-            f'    <td valign="top">\n\n{ABOUT_ME_CONTENT}\n\n    </td>\n'
-            "  </tr>\n"
-            "</table>"
-        )
-    elif slot == "about_right":
-        parts.append(render_side_by_side(ABOUT_ME_CONTENT, img_tag))
-    else:
-        parts.append(ABOUT_ME_CONTENT)
-
+    parts.append(ABOUT_ME_CONTENT)
     parts.append("---")
 
-    if slot == "tech_header":
-        parts.append(f'<img src="{CAPRI_RAW_BASE}/{anim.filename}" alt="{anim.alt}" width="{anim.width}" align="right">')
+    if slot == "between_about_tech":
+        parts.append(banner)
 
     parts.append("## 💻 Tech Stack")
     parts.append(LANGUAGES_SECTION)
 
-    if slot == "tech_frameworks":
-        parts.append(render_side_by_side(FRAMEWORKS_SECTION, img_tag))
-    else:
-        parts.append(FRAMEWORKS_SECTION)
+    if slot == "inside_tech_frameworks":
+        parts.append(banner)
 
+    parts.append(FRAMEWORKS_SECTION)
     parts.append(DATABASES_SECTION)
 
-    if slot == "tech_tools":
-        parts.append(render_side_by_side(TOOLS_SECTION, img_tag))
-    else:
-        parts.append(TOOLS_SECTION)
+    if slot == "inside_tech_tools":
+        parts.append(banner)
 
+    parts.append(TOOLS_SECTION)
     parts.append("---")
 
-    if slot == "fun_facts_right":
-        parts.append(render_side_by_side(FUN_FACTS_CONTENT, img_tag))
-    else:
-        parts.append(FUN_FACTS_CONTENT)
+    if slot == "between_tech_fun":
+        parts.append(banner)
 
-    if slot in ("bottom_center", "bottom_right"):
-        align = slot.split("_", 1)[1]
-        parts.append(render_aligned_block(anim, align))
+    parts.append(FUN_FACTS_CONTENT)
 
-    state_json = json.dumps({"animation": anim.filename, "slot": slot})
+    if slot == "bottom_banner":
+        parts.append(banner)
+
+    state_json = json.dumps({"slot": slot, "interval_sec": SWITCH_SECONDS})
     parts.append(
         f'<div align="right"><sub>Capri companion art by '
         f'<a href="{CAPRI_REPO_URL}">lachydotmcg/capri-desktop</a></sub></div>\n'
@@ -209,13 +242,16 @@ def build_readme(anim: CapriAnimation, slot: str) -> str:
 
 
 def main() -> None:
-    """Update README.md with a newly chosen Capri animation and position."""
+    """Generate the 10s-switching SVG banner and update README.md."""
+    SVG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    svg_content = build_svg_banner()
+    SVG_PATH.write_text(svg_content, encoding="utf-8")
+
     current_text = README_PATH.read_text(encoding="utf-8") if README_PATH.exists() else ""
-    prev_anim, prev_slot = read_previous_state(current_text)
-    next_anim, next_slot = pick_next_state(prev_anim, prev_slot)
-    updated_text = build_readme(next_anim, next_slot)
-    README_PATH.write_text(updated_text, encoding="utf-8")
-    print(f"Updated Capri -> animation={next_anim.filename}, slot={next_slot}")
+    prev_slot = read_previous_slot(current_text)
+    next_slot = pick_next_slot(prev_slot)
+    README_PATH.write_text(build_readme(next_slot), encoding="utf-8")
+    print(f"Updated Capri -> 10s SVG banner at slot={next_slot}")
 
 
 if __name__ == "__main__":
