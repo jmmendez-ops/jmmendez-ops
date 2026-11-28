@@ -35,12 +35,12 @@ class CapriAnimation:
     height: int = 220
 
 
-GLITCH_ANIMATION = CapriAnimation("glitch.webp", "Capri glitching", 220, 220)
-
-POSE_ANIMATIONS: tuple[CapriAnimation, ...] = (
+ANIMATIONS: tuple[CapriAnimation, ...] = (
     CapriAnimation("idle.webp", "Capri hanging out and blinking", 220, 220),
+    CapriAnimation("glitch.webp", "Capri glitching", 220, 220),
     CapriAnimation("sleep.webp", "Capri napping and booting back up", 220, 220),
     CapriAnimation("perch.webp", "Capri perching on your window", 210, 210),
+    CapriAnimation("glitch.webp", "Capri glitching", 220, 220),
     CapriAnimation("perch-music.webp", "Capri swaying to your music", 210, 210),
 )
 
@@ -58,87 +58,46 @@ def fetch_webp_data_uri(filename: str) -> str:
 
 
 def build_svg_widget() -> str:
-    """Build a compact SVG that uses Capri's own glitch.webp on every 10s switch."""
-    shuffled = list(POSE_ANIMATIONS)
-    random.shuffle(shuffled)
-    count = len(shuffled)
+    """Cycle through all ANIMATIONS with clean hard cuts — no overlays, no extra effects."""
+    frames = list(ANIMATIONS)
+    random.shuffle(frames)
+    count = len(frames)
     total_duration = count * SWITCH_SECONDS
     slot_pct = 100.0 / count
-    fade_pct = 1.75  # ~0.7s cross-fade over a 40s loop
 
-    css_rules: list[str] = [
-        "    .capri-frame { transform-box: fill-box; transform-origin: center; }",
-        "    @keyframes capri-glitch-transition {",
-        "      0% { opacity: 0; transform: scale(0.98); }",
-        "      2% { opacity: 1; transform: scale(1.02); }",
-        "      9% { opacity: 1; transform: scale(1); }",
-        "      14% { opacity: 0; transform: scale(0.98); }",
-        "      100% { opacity: 0; transform: scale(0.98); }",
-        "    }",
-        "    .capri-glitch {",
-        "      opacity: 0;",
-        f"      animation: capri-glitch-transition {SWITCH_SECONDS}s ease-in-out infinite;",
-        "      pointer-events: none;",
-        "    }",
-    ]
+    css_rules: list[str] = []
     image_tags: list[str] = []
 
-    for idx, anim in enumerate(shuffled):
+    for idx, anim in enumerate(frames):
         start_pct = idx * slot_pct
         end_pct = (idx + 1) * slot_pct
+
+        if idx == 0:
+            kf = (
+                f"0%, {end_pct - 0.01:.2f}% {{ opacity: 1; }}\n"
+                f"      {end_pct:.2f}%, 100% {{ opacity: 0; }}"
+            )
+        else:
+            kf = (
+                f"0%, {start_pct - 0.01:.2f}% {{ opacity: 0; }}\n"
+                f"      {start_pct:.2f}%, {end_pct - 0.01:.2f}% {{ opacity: 1; }}\n"
+                f"      {end_pct:.2f}%, 100% {{ opacity: 0; }}"
+            )
+
+        css_rules.append(
+            f"    @keyframes c{idx} {{ {kf} }}\n"
+            f"    .c{idx} {{ opacity: 0; animation: c{idx} {total_duration}s steps(1,end) infinite; }}"
+        )
+
         max_x = max(10, SVG_WIDTH - anim.width - 10)
         max_y = max(10, SVG_HEIGHT - anim.height - 10)
         x_pos = random.randint(10, max_x)
         y_pos = random.randint(10, max_y)
-
-        if idx == 0:
-            keyframes = (
-                "0% { opacity: 0.4; transform: scale(0.98); }\n"
-                f"      {fade_pct * 2:.2f}% {{ opacity: 1; transform: scale(1); }}\n"
-                f"      {end_pct - 0.5:.2f}% {{ opacity: 1; transform: scale(1); }}\n"
-                f"      {end_pct + 1.25:.2f}% {{ opacity: 0; transform: scale(0.98); }}\n"
-                f"      {100.0 - 0.5:.2f}% {{ opacity: 0; transform: scale(0.98); }}\n"
-                "      100% { opacity: 0.4; transform: scale(0.98); }"
-            )
-        elif idx == count - 1:
-            keyframes = (
-                f"0% {{ opacity: 0; transform: scale(0.98); }}\n"
-                f"      {start_pct + 0.5:.2f}% {{ opacity: 0; transform: scale(0.98); }}\n"
-                f"      {start_pct + fade_pct * 2:.2f}% {{ opacity: 1; transform: scale(1); }}\n"
-                f"      {end_pct - 0.5:.2f}% {{ opacity: 1; transform: scale(1); }}\n"
-                "      100% { opacity: 0; transform: scale(0.98); }"
-            )
-        else:
-            keyframes = (
-                f"0%, {start_pct + 0.5:.2f}% {{ opacity: 0; transform: scale(0.98); }}\n"
-                f"      {start_pct + fade_pct * 2:.2f}% {{ opacity: 1; transform: scale(1); }}\n"
-                f"      {end_pct - 0.5:.2f}% {{ opacity: 1; transform: scale(1); }}\n"
-                f"      {end_pct + 1.25:.2f}%, 100% {{ opacity: 0; transform: scale(0.98); }}"
-            )
-
-        css_rules.append(
-            f"    @keyframes capri-step-{idx} {{\n"
-            f"      {keyframes}\n"
-            f"    }}\n"
-            f"    .capri-{idx} {{\n"
-            f"      opacity: 0;\n"
-            f"      animation: capri-step-{idx} {total_duration}s ease-in-out infinite;\n"
-            f"    }}"
-        )
-
         data_uri = fetch_webp_data_uri(anim.filename)
         image_tags.append(
-            f'  <image class="capri-frame capri-{idx}" x="{x_pos}" y="{y_pos}" '
+            f'  <image class="c{idx}" x="{x_pos}" y="{y_pos}" '
             f'width="{anim.width}" height="{anim.height}" href="{data_uri}" />'
         )
-
-    glitch_uri = fetch_webp_data_uri(GLITCH_ANIMATION.filename)
-    glitch_x = (SVG_WIDTH - GLITCH_ANIMATION.width) // 2
-    glitch_y = (SVG_HEIGHT - GLITCH_ANIMATION.height) // 2
-    image_tags.append(
-        f'  <image class="capri-frame capri-glitch" x="{glitch_x}" y="{glitch_y}" '
-        f'width="{GLITCH_ANIMATION.width}" height="{GLITCH_ANIMATION.height}" href="{glitch_uri}" />'
-    )
 
     styles = "\n".join(css_rules)
     images = "\n".join(image_tags)
@@ -146,8 +105,7 @@ def build_svg_widget() -> str:
         f'<svg xmlns="http://www.w3.org/2000/svg" '
         f'viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}" width="{SVG_WIDTH}" height="{SVG_HEIGHT}">\n'
         f"  <style>\n{styles}\n  </style>\n"
-        f"{images}\n"
-        f"</svg>\n"
+        f"{images}\n</svg>\n"
     )
 
 
