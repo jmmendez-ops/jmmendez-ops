@@ -1,3 +1,11 @@
+<div align="center">
+  <a href="https://github.com/lachydotmcg/capri-desktop">
+    <img src="https://raw.githubusercontent.com/lachydotmcg/capri-desktop/main/assets/readme/perch.webp" alt="Capri perching on the divider" width="120">
+  </a>
+  <br>
+  <sub>Capri by <a href="https://github.com/lachydotmcg/capri-desktop">lachydotmcg/capri-desktop</a></sub>
+</div>
+
 ---
 ### 📝 About Me
 This Fella is a Computer Science student from the Philippines, currently learning the ropes of software development. I like turning small ideas into working tools, mostly through Python automation.
