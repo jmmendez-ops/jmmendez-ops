@@ -1,14 +1,5 @@
 ---
 
-<table>
-  <tr>
-    <td align="center" valign="middle" width="160">
-
-<a href="https://github.com/lachydotmcg/capri-desktop" title="Capri by lachydotmcg/capri-desktop"><img src="https://raw.githubusercontent.com/lachydotmcg/capri-desktop/main/assets/readme/glitch.webp" alt="Capri glitching" width="130"></a>
-
-    </td>
-    <td valign="top">
-
 ### 📝 About Me
 This Fella is a Computer Science student from the Philippines, currently learning the ropes of software development. I like turning small ideas into working tools, mostly through Python automation.
 
@@ -16,10 +7,6 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - Currently learning other tech stacks such as React and Node.js to broaden my development skills.
 - I have a bunch of projects in progress (currently private)
 - 💡 Always experimenting with small automation ideas that solve a real (or fun) problems
-
-    </td>
-  </tr>
-</table>
 
 ---
 
@@ -63,5 +50,11 @@ This Fella is a Computer Science student from the Philippines, currently learnin
 - 🎮 Play lots of gacha games
 - I enjoy Termux tweaking
 
+<div align="center">
+  <a href="https://github.com/lachydotmcg/capri-desktop" title="Capri by lachydotmcg/capri-desktop">
+    <img src="assets/capri-roam.svg" alt="Capri roaming across the profile" width="100%">
+  </a>
+</div>
+
 <div align="right"><sub>Capri companion art by <a href="https://github.com/lachydotmcg/capri-desktop">lachydotmcg/capri-desktop</a></sub></div>
-<!-- capri-state: {"animation": "glitch.webp", "slot": "about_left"} -->
+<!-- capri-state: {"slot": "bottom_banner", "interval_sec": 10} -->
