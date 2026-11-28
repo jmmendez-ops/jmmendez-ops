@@ -131,39 +131,47 @@ def pick_next_side(prev_side: str | None) -> str:
     return random.choice(choices or SIDE_SLOTS)
 
 
+ICON_BASE = "https://api.iconify.design/lucide"
+
+
+def icon(name: str, color: str = "58a6ff", size: int = 16) -> str:
+    """Return a crisp Lucide SVG icon tag for GitHub Markdown."""
+    return (
+        f'<img src="{ICON_BASE}/{name}.svg?color=%23{color}" '
+        f'width="{size}" height="{size}" align="absmiddle" alt="{name}">'
+    )
+
+
 def build_readme(side: str) -> str:
-    """Build the profile README with Capri floating right/left beside the intro.
+    """Build the profile README with Capri floating right beside the intro.
 
-    Uses align="right" or align="left" on the img tag — the only GitHub-safe
-    way to float an image beside text without leaking raw HTML tags.
+    Uses ### (H3) instead of ## (H2) in the hero so GitHub's H2 bottom border
+    never cuts across the floated Capri companion image, and uses Lucide icons
+    instead of emojis.
     """
-    capri_align = "right" if side == "hero_right" else "left"
-
-    # Float Capri beside the intro text using a plain aligned img.
-    # GitHub renders markdown after a floating img correctly.
     capri_float = (
         f'<a href="{CAPRI_REPO_URL}" title="Capri by lachydotmcg/capri-desktop">'
-        f'<img src="assets/capri-roam.svg" alt="Capri companion" width="200" align="{capri_align}">'
+        f'<img src="assets/capri-roam.svg" alt="Capri companion" width="200" align="right">'
         f"</a>"
     )
 
     hero_section = f"""{capri_float}
 
-## 👋 Hey, I'm John Paulo Mendez
+### {icon("terminal", "58a6ff", 20)} Hey, I'm John Paulo Mendez
 
-`@jmmendez-ops` · CS Student · Philippines 🇵🇭
+`@jmmendez-ops` · CS Student · Philippines
 
-> Turning small ideas into working tools, mostly through Python automation.
+*Turning small ideas into working tools, mostly through Python automation.*
 
-- 🐍 Building & exploring **Python automation scripts** — file parsers, batch processors, `.txt`/`.csv` CLI tools
-- ⚡ Broadening my stack with **React** and **Node.js**
-- 🔒 Several **private projects** in progress
-- 💡 Always experimenting with small ideas that solve real (or fun) problems
+- {icon("bot", "3fb950")} Building & exploring **Python automation scripts** — file parsers, batch processors, `.txt`/`.csv` CLI tools
+- {icon("zap", "d29922")} Broadening my stack with **React** and **Node.js**
+- {icon("lock", "a371f7")} Several **private projects** in progress
+- {icon("lightbulb", "e3b341")} Always experimenting with small ideas that solve real (or fun) problems
 
-<br clear="{capri_align}">"""
+<br clear="right">"""
 
-    tech_stack_section = """\
-## 💻 Tech Stack
+    tech_stack_section = f"""\
+## {icon("cpu", "58a6ff", 22)} Tech Stack
 
 ### Languages & Markup
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -195,15 +203,15 @@ def build_readme(side: str) -> str:
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)"""
 
-    fun_facts_section = """\
-## ✨ Beyond the Terminal
+    fun_facts_section = f"""\
+## {icon("sparkles", "a371f7", 22)} Beyond the Terminal
 
-- 🐾 **12 cats and 2 dogs** to feed
-- 📖 Love reading **manhwa & manga**
-- 🎮 Play lots of **gacha games**
-- 📱 Enjoy **Termux** tweaking"""
+- {icon("paw-print", "f778ba")} **12 cats and 2 dogs** to feed
+- {icon("book-open", "58a6ff")} Love reading **manhwa & manga**
+- {icon("gamepad-2", "a371f7")} Play lots of **gacha games**
+- {icon("smartphone", "3fb950")} Enjoy **Termux** tweaking"""
 
-    state_json = json.dumps({"side": side, "interval_sec": SWITCH_SECONDS})
+    state_json = json.dumps({"side": "hero_right", "interval_sec": SWITCH_SECONDS})
     footer = (
         f'<div align="right"><sub>Capri companion art by '
         f'<a href="{CAPRI_REPO_URL}">lachydotmcg/capri-desktop</a></sub></div>\n'

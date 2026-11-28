@@ -1,19 +1,19 @@
 <a href="https://github.com/lachydotmcg/capri-desktop" title="Capri by lachydotmcg/capri-desktop"><img src="assets/capri-roam.svg" alt="Capri companion" width="200" align="right"></a>
 
-## 👋 Hey, I'm John Paulo Mendez
+### <img src="https://api.iconify.design/lucide/terminal.svg?color=%2358a6ff" width="20" height="20" align="absmiddle" alt="terminal"> Hey, I'm John Paulo Mendez
 
-`@jmmendez-ops` · CS Student · Philippines 🇵🇭
+`@jmmendez-ops` · CS Student · Philippines
 
-> Turning small ideas into working tools, mostly through Python automation.
+*Turning small ideas into working tools, mostly through Python automation.*
 
-- 🐍 Building & exploring **Python automation scripts** — file parsers, batch processors, `.txt`/`.csv` CLI tools
-- ⚡ Broadening my stack with **React** and **Node.js**
-- 🔒 Several **private projects** in progress
-- 💡 Always experimenting with small ideas that solve real (or fun) problems
+- <img src="https://api.iconify.design/lucide/bot.svg?color=%233fb950" width="16" height="16" align="absmiddle" alt="bot"> Building & exploring **Python automation scripts** — file parsers, batch processors, `.txt`/`.csv` CLI tools
+- <img src="https://api.iconify.design/lucide/zap.svg?color=%23d29922" width="16" height="16" align="absmiddle" alt="zap"> Broadening my stack with **React** and **Node.js**
+- <img src="https://api.iconify.design/lucide/lock.svg?color=%23a371f7" width="16" height="16" align="absmiddle" alt="lock"> Several **private projects** in progress
+- <img src="https://api.iconify.design/lucide/lightbulb.svg?color=%23e3b341" width="16" height="16" align="absmiddle" alt="lightbulb"> Always experimenting with small ideas that solve real (or fun) problems
 
 <br clear="right">
 
-## 💻 Tech Stack
+## <img src="https://api.iconify.design/lucide/cpu.svg?color=%2358a6ff" width="22" height="22" align="absmiddle" alt="cpu"> Tech Stack
 
 ### Languages & Markup
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -45,12 +45,12 @@
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
-## ✨ Beyond the Terminal
+## <img src="https://api.iconify.design/lucide/sparkles.svg?color=%23a371f7" width="22" height="22" align="absmiddle" alt="sparkles"> Beyond the Terminal
 
-- 🐾 **12 cats and 2 dogs** to feed
-- 📖 Love reading **manhwa & manga**
-- 🎮 Play lots of **gacha games**
-- 📱 Enjoy **Termux** tweaking
+- <img src="https://api.iconify.design/lucide/paw-print.svg?color=%23f778ba" width="16" height="16" align="absmiddle" alt="paw-print"> **12 cats and 2 dogs** to feed
+- <img src="https://api.iconify.design/lucide/book-open.svg?color=%2358a6ff" width="16" height="16" align="absmiddle" alt="book-open"> Love reading **manhwa & manga**
+- <img src="https://api.iconify.design/lucide/gamepad-2.svg?color=%23a371f7" width="16" height="16" align="absmiddle" alt="gamepad-2"> Play lots of **gacha games**
+- <img src="https://api.iconify.design/lucide/smartphone.svg?color=%233fb950" width="16" height="16" align="absmiddle" alt="smartphone"> Enjoy **Termux** tweaking
 
 <div align="right"><sub>Capri companion art by <a href="https://github.com/lachydotmcg/capri-desktop">lachydotmcg/capri-desktop</a></sub></div>
 <!-- capri-state: {"side": "hero_right", "interval_sec": 10} -->
