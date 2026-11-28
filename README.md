@@ -1,4 +1,4 @@
-<img src="assets/capri-roam.svg" alt="Capri desktop companion" width="360" align="right">
+<img src="assets/capri-roam.svg" alt="Capri desktop companion" width="250" align="right">
 
 ### <img src="https://api.iconify.design/lucide/terminal.svg?color=%2358a6ff" width="20" height="20" align="absmiddle" alt="terminal"> Hey, I'm John Paulo Mendez
 
