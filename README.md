@@ -5,6 +5,6 @@
 </p>
 <p align="center">
   <a href="https://github.com/jpm-mendez/Felivet">
-    <img src="https://raw.githubusercontent.com/jpm-mendez/Felivet/main/assets/felivet.svg" alt="FeliVet Insight" width="100%">
+    <img src="https://raw.githubusercontent.com/jpm-mendez/Felivet/main/assets/felinew.svg" alt="FeliVet Insight" width="100%">
   </a>
 </p>
