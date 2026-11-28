@@ -150,9 +150,7 @@ def build_readme(side: str) -> str:
     instead of emojis.
     """
     capri_float = (
-        f'<a href="{CAPRI_REPO_URL}" title="Capri by lachydotmcg/capri-desktop">'
-        f'<img src="assets/capri-roam.svg" alt="Capri companion" width="200" align="right">'
-        f"</a>"
+        '<img src="assets/capri-roam.svg" alt="Capri companion" width="200" align="right">'
     )
 
     hero_section = f"""{capri_float}

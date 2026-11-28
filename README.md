@@ -1,4 +1,4 @@
-<a href="https://github.com/lachydotmcg/capri-desktop" title="Capri by lachydotmcg/capri-desktop"><img src="assets/capri-roam.svg" alt="Capri companion" width="200" align="right"></a>
+<img src="assets/capri-roam.svg" alt="Capri companion" width="200" align="right">
 
 ### <img src="https://api.iconify.design/lucide/terminal.svg?color=%2358a6ff" width="20" height="20" align="absmiddle" alt="terminal"> Hey, I'm John Paulo Mendez
 
